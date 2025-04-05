@@ -27,8 +27,8 @@ export default async function LinkAccountPage({
 }: {
   searchParams: { code: string; error: string; state: string };
 }) {
-  // Redirect lost users to homepage
-  if (!state) redirect("https://spoticord.com");
+  // // Redirect lost users to homepage
+  // if (!state) redirect("https://spoticord.com");
 
   const entry = await db.query.linkRequests.findFirst({
     where: eq(linkRequests.token, state),
